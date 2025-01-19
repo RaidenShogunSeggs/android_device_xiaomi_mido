@@ -26,6 +26,24 @@ $(call inherit-product, device/xiaomi/mido/device.mk)
 # Inherit some common LineageOS stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
+# Signed Keys
+$(call inherit-product, vendor/sonric-keys/product.mk)
+
+# Viper4AndroidFX
+$(call inherit-product, packages/apps/ViPER4AndroidFX/config.mk)
+
+# Missi by Xiaomi
+$(call inherit-product, device/xiaomi/missi/missi.mk)
+
+# Flags
+TARGET_BOOT_ANIMATION_RES := 1080
+RISING_MAINTAINER := SonRic
+TARGET_SUPPORTS_64_BIT_APPS := true
+TARGET_FACE_UNLOCK_SUPPORTED := true
+TARGET_ENABLE_BLUR := true
+WITH_GMS := false
+PRODUCT_NO_CAMERA := false
+
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := mido
 PRODUCT_NAME := lineage_mido
@@ -38,6 +56,11 @@ BOARD_VENDOR := Xiaomi
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BuildDesc="mido-user 7.0 NRD90M V11.0.2.0.NCFMIXM release-keys" \
-    BuildFingerprint="xiaomi/mido/mido:7.0/NRD90M/V11.0.2.0.NCFMIXM:user/release-keys" \
-    DeviceProduct=mido
+    RisingMaintainer="SonRic" \
+    RisingChipset="Qualcomm Snapdragon 625" \
+    DeviceProduct=mido \
+    SystemName=mido \
+    BuildFlavor=mido-userdebug \
+    BuildNumber=OS2.0.6.2.VCFMIXM \
+    BuildDesc="mido-userdebug 15 AP4A.250105.002 OS2.0.6.2.VCFMIXM release-keys" \
+    BuildFingerprint="Xiaomi/mido/mido:15/AP4A.250105.002/OS2.0.6.2.VCFMIXM:userdebug/release-keys"

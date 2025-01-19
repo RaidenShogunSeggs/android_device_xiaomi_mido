@@ -46,6 +46,26 @@ PRODUCT_SOONG_NAMESPACES += \
     bootable/deprecated-ota \
     hardware/xiaomi
 
+# Prebuilt
+PRODUCT_PACKAGES += \
+    AndroidAMOverlay \
+    AndroidConfigCommonOverlay \
+    AndroidConfigOverlay \
+    AndroidDeviceLockControllerOverlay \
+    AndroidFrameworkGmsOverlay \
+    AndroidFrameworkMidoOverlay \
+    AndroidHealthConnectOverlay \
+    AndroidPermissionControllerOverlay \
+    AndroidSettingsOverlay \
+    AndroidSettingsProviderOverlay \
+    AndroidSettingsMidoOverlay \
+    AndroidSettingsXiaomiMSM8953Overlay \
+    AndroidSystemUIOverlay \
+    AndroidSystemUIGXOverlay \
+    AndroidSystemUIMidoOverlay \
+    LatinImeGoogle32Lite \
+    ViaBrowser
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.low_latency.xml \
@@ -84,7 +104,8 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.midi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.midi.xml \
     frameworks/native/data/etc/android.software.opengles.deqp.level-2020-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.opengles.deqp.level.xml \
     frameworks/native/data/etc/android.software.print.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.print.xml \
-    frameworks/native/data/etc/android.software.vulkan.deqp.level-2020-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.vulkan.deqp.level.xml
+    frameworks/native/data/etc/android.software.vulkan.deqp.level-2020-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.vulkan.deqp.level.xml \
+    $(LOCAL_PATH)/prebuilt/mido.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/mido.xml
 
 # ANT
 PRODUCT_PACKAGES += \
@@ -262,10 +283,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.lineage.health-service.default
 
-# LiveDisplay
-PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.0-service.xiaomi_mido
-
 # Media
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
@@ -344,10 +361,6 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     android.hardware.thermal-service.qti.xiaomi_mido
-
-# Touch features
-PRODUCT_PACKAGES += \
-    vendor.lineage.touch@1.0-service.xiaomi_mido
 
 # USB HAL
 PRODUCT_SOONG_NAMESPACES += \

@@ -26,4 +26,18 @@
     <!-- Should we vibrate on an icon animation of the shelf. This should only be active if the
      vibrator is capable of subtle vibrations -->
     <bool name="config_vibrateOnIconAnimation">true</bool>
+
+    <!-- Show Battery Health -->
+    <bool name="config_battery_index_enabled">true</bool>
+
+    <!-- our stuff -->
+    <bool name="config_alwaysExpandNonGroupedNotifications">true</bool>
+    <bool name="config_enableLockScreenRotation">true</bool>
+    <bool name="config_showBatteryEstimateQSBH">true</bool>
+    <bool name="config_smart_replies_in_notifications_requires_targeting_p">false</bool>
+    <bool name="config_smart_replies_in_notifications_edit_choices_before_sending">true</bool>
+    <bool name="wifitrackerlib_enable_verbose_logging_for_userdebug">false</bool>
+    <integer name="config_showTemperatureWarning">1</integer>
+    <integer name="config_showUsbPortAlarm">1</integer>
+    <integer name="config_screenRecorderMaxFramerate">60</integer>
 </resources>
